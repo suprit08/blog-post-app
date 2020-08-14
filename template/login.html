@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% load static %}
+
+{% block content %}
+
+{% include 'nav_bar.html' %}
+
+<div style="margin-top:80px;width:900px;margin:80px auto;">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Login</legend>
+            {{ form | crispy }}
+        </fieldset>
+        <div>
+            <button class="btn btn-primary mb-2" type="submit">Login</button>&nbsp;
+            <button class="btn btn-danger mb-2" type="reset">Cancel</button>
+        </div>
+    </form>
+</div>
+
+{% endblock content %}
+

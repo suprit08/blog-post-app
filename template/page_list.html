@@ -1,0 +1,15 @@
+<div class="pagination">
+    <div class="section-inner clearfix">
+        <p>
+            {% if post.has_previous %}
+                <a href="?page={{ posts.previous_page_number }}">< Prev</a> |
+            {% endif %}
+
+            {% if post.has_next %}
+                <a href="?page={{ posts.next_page_number }}">Next ></a>
+            {% endif %}
+
+            <span>Page {{ post.number }} of {{ post.paginator.num_pages }}</span>
+        </p>
+    </div>
+</div>

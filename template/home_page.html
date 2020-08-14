@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %} <h2 class="title">Post Your thoughts</h2> {% endblock title %}
+
+{% block content %}
+
+<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600' rel='stylesheet' type='text/css'>
+
+{% include 'nav_bar.html' %}
+
+<p>Hello Everybody !</p>
+<h1>Recent Posts</h1>
+{% for post in post %}
+<div>
+    <p style="border:1px solid gray;">
+        <h3>{{post.post.title}}</h3>
+        <small>{{post.date_published}}</small>
+        <p style="border:0px solid black;margin:25px 50px;background-color:lightblue;padding:5px;border-radius:10px;">
+            {{post.post_content}}
+        </p>
+        <p>posted by {{post.user_name}}</p>
+        <p>Visit Profile : <a href="{{post.user_profile_link}}">{{post.user_profile_link}}</a></p>
+    </p>
+</div>
+{% include 'page_list' %}
+{% endfor %}
+
+
+{% endblock content %}
